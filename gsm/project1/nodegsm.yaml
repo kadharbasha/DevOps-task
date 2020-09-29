@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gsm1-deployment
+  labels:
+    app: gsm1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gsm1
+  template:
+    metadata:
+      labels:
+        app: gsm1
+    spec:
+      containers:
+      - name: gsm1
+        image: gcr.io/exalted-analogy-284205/gsmnode:1
+        ports:
+        - containerPort: 4000
+        livenessProbe:
+            httpGet:
+              path: /posts
+              port: 4000
+              scheme: HTTP
+              
+            initialDelaySeconds: 30
+            periodSeconds: 3
+            failureThreshold: 2
+            timeoutSeconds: 10
+        readinessProbe:
+            httpGet:
+              path: /posts
+              port: 4000
+              scheme: HTTP
+              
+            initialDelaySeconds: 30
+            periodSeconds: 3
+            failureThreshold: 2
+            timeoutSeconds: 10
+ 
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gsm1-service
+spec:
+  selector:
+    app: gsm1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4000
+  type: LoadBalancer

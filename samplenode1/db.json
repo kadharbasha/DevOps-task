@@ -1,0 +1,87 @@
+{
+	"posts": [
+		{
+			"id": 1,
+			"title": "json-server",
+			"author": "typicode"
+		}
+	],
+	"comments": [
+		{
+			"id": 1,
+			"body": "some comment",
+			"postId": 1
+		}
+	],
+	"profile": {
+		"name": "typicode"
+	},
+	"category": [
+		{
+			"as": "/s/1",
+			"href": "/s/[...categorySlug]",
+			"text": "Women's Clothing",
+			"items": [
+				{
+					"as": "/s/1",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 1"
+				},
+				{
+					"as": "/s/2",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 2"
+				},
+				{
+					"as": "/s/3",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 3"
+				}
+			]
+		},
+		{
+			"as": "/s/2",
+			"href": "/s/[...categorySlug]",
+			"text": "Men's Clothing",
+			"items": [
+				{
+					"as": "/s/1",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 1"
+				},
+				{
+					"as": "/s/2",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 2"
+				},
+				{
+					"as": "/s/3",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 3"
+				}
+			]
+		},
+		{
+			"as": "/s/3",
+			"href": "/s/[...categorySlug]",
+			"text": "Kid's Clothing",
+			"items": [
+				{
+					"as": "/s/1",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 1"
+				},
+				{
+					"as": "/s/2",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 2"
+				},
+				{
+					"as": "/s/3",
+					"href": "/s/[...categorySlug]",
+					"text": "Subcategory 3"
+				}
+			]
+		}
+	]
+}
